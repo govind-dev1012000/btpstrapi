@@ -3,10 +3,21 @@
 #   memory: 128M
 #   buildpack: nodejs_buildpack
 
----
-applications:
-- name: first-push
-  memory: 218MB
-  disk_quota: 218MB
-  buildpacks:
-  - nodejs_buildpack
+# ---
+# applications:
+# - name: first-push
+#   memory: 218MB
+#   disk_quota: 218MB
+#   buildpacks:
+#   - nodejs_buildpack
+
+_schema-version: "3.1"
+ID: cpapp
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+
+build-parameters:
+before-all:
+- builder: nodejs_buildpack
+commands:
