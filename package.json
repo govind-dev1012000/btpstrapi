@@ -1,0 +1,25 @@
+{
+  "name": "btpstrapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x.x"
+  },
+  "scripts": {
+    "start": "node start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/govind-dev1012000/btpstrapi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/govind-dev1012000/btpstrapi/issues"
+  },
+  "homepage": "https://github.com/govind-dev1012000/btpstrapi#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
