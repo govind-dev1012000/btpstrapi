@@ -65,7 +65,7 @@ stages:
     cfSpace: "dev"
     cfCredentialsId: "cfdeploy"
     cfAppName: "myapp1"
-    cfManifest: "manifest.yml"
+    cfManifest: "./manifest.yml"
     tmsUpload: false
 steps:
   artifactPrepareVersion:
