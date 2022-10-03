@@ -64,7 +64,7 @@ stages:
     cfOrg: "d19c1445trial"
     cfSpace: "dev"
     cfCredentialsId: "cfdeploy"
-    cfAppName: "myapp"
+    cfAppName: "myapp1"
     tmsUpload: false
 steps:
   artifactPrepareVersion:
