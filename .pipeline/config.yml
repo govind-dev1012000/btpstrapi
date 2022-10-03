@@ -45,7 +45,7 @@
 general:
   buildTool: "npm"
 service:
-  buildToolVersion: "N14"
+  # buildToolVersion: "N14"
 stages:
   Release:
     cloudFoundryDeploy: true
@@ -53,11 +53,11 @@ stages:
     cfOrg: "d19c1445trial"
     cfSpace: "dev"
     cfCredentialsId: "cfdeploy"
-    cfAppName: "myapp1"
+    # cfAppName: "myapp1"
     cfManifest: "./manifest.yml"
     tmsUpload: false
 steps:
-  artifactPrepareVersion:
-    versioningType: "cloud_noTag"
-  cloudFoundryDeploy:
-    mtaDeployParameters: "-f --version-rule ALL"
+  # artifactPrepareVersion:
+  #   versioningType: "cloud_noTag"
+  # cloudFoundryDeploy:
+  #   mtaDeployParameters: "-f --version-rule ALL"
