@@ -9,7 +9,5 @@ applications:
   instances: 1
   memory: 32M
   disk_quota: 64M
-  routes:
-  - route: ((route))
   buildpacks:
   - nodejs_buildpack
