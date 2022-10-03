@@ -45,7 +45,7 @@
 general:
   buildTool: "npm"
 service:
-  # buildToolVersion: "N14"
+  buildToolVersion: "N14"
 stages:
   Release:
     cloudFoundryDeploy: true

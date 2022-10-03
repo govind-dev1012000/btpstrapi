@@ -9,5 +9,3 @@ applications:
   instances: 1
   memory: 32M
   disk_quota: 64M
-  buildpacks:
-  - nodejs_buildpack
