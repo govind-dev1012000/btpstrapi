@@ -48,15 +48,17 @@ general:
 service:
   buildToolVersion: "N14"
 stages:
-  Acceptance:
-    cloudFoundryDeploy: true                                                
-    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" 
-    cfOrg: "d19c1445trial"
-    cfSpace: "dev"                           
-    cfAppName: "myapp101"
-    cfCredentialsId: "cfdeploy" 
+  # Acceptance:
+  #   cloudFoundryDeploy: true                                                
+  #   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" 
+  #   cfOrg: "d19c1445trial"
+  #   cfSpace: "dev"                           
+  #   cfAppName: "myapp101"
+  #   cfCredentialsId: "cfdeploy" 
   Release:
     cloudFoundryDeploy: true
+    deployTool: "npm"
+    deployType: "standard"
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
     cfSpace: "dev"

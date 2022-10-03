@@ -6,8 +6,7 @@
 ---
 applications:
 - name: first-push
-  instances: 1
-  memory: 32MB
+  memory: 218MB
   disk_quota: 218MB
-  # buildpacks:
-  # - nodejs_buildpack
+  buildpacks:
+  - nodejs_buildpack
