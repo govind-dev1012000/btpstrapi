@@ -82,7 +82,7 @@ stages:
     cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry acceptance space. If you set this parameter to true, the cloudFoundryDeploy step is mandatory
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" # for example, "https://api.cf.eu10.hana.ondemand.com"
     cfOrg: "d19c1445trial"
-    cfSpace: "cfdeploy"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
+    cfSpace: "dev"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
     cfAppName: "myapp101"
     cfCredentialsId: "cfdeploy"
     npmExecuteEndToEndTests: true                                          # true, if you want to execute end-to-end acceptance tests (default: false)
@@ -94,7 +94,7 @@ stages:
     cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry acceptance space. If you set this parameter to true, the cloudFoundryDeploy step is mandatory
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" # for example, "https://api.cf.eu10.hana.ondemand.com"
     cfOrg: "d19c1445trial"
-    cfSpace: "cfdeploy"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
+    cfSpace: "dev"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
     cfAppName: "myapp101"
     cfCredentialsId: "cfdeploy"
     tmsUpload: false                                                         # true, if you want to upload your artifact to SAP Cloud Transport Management. If you set this parameter to true, the tmsUpload step is mandatory
