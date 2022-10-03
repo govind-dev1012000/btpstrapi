@@ -57,8 +57,7 @@ stages:
   #   cfCredentialsId: "cfdeploy" 
   Release:
     cloudFoundryDeploy: true
-    deployTool: "npm"
-    deployType: "standard"
+    deployTool: "mtaDeployPlugin"
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
     cfSpace: "dev"
@@ -67,10 +66,10 @@ stages:
     cfManifest: "./manifest.yml"
     tmsUpload: false
 steps:
-  # artifactPrepareVersion:
-  #   versioningType: "cloud_noTag"
-  # cloudFoundryDeploy:
-  #   mtaDeployParameters: "-f --version-rule ALL"
+  artifactPrepareVersion:
+    versioningType: "cloud_noTag"
+  cloudFoundryDeploy:
+    mtaDeployParameters: "-f --version-rule ALL"
 
 # general:
 #   buildTool: "npm"
