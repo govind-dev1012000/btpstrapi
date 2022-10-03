@@ -11,13 +11,23 @@
 #   buildpacks:
 #   - nodejs_buildpack
 
-_schema-version: "3.1"
-ID: cpapp
-version: 1.0.0
-description: "A simple CAP project."
-parameters:
-
+ID: app1 
+_schema-version: "2.1"
+version: 0.0.1
+   
 build-parameters:
-before-all:
-- builder: nodejs_buildpack
-commands:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install
+
+
+modules:
+  - name: app1
+    path: .
+    type: nodejs
+#    build-parameters:
+#      ignore: ["node_modules/"]
+    parameters:
+      memory: 256M
+      disk-quota: 1024M
