@@ -1,0 +1,15 @@
+# applications:
+# - name: myapp1
+#   memory: 128M
+#   buildpack: nodejs_buildpack
+
+---
+applications:
+- name: first-push
+  instances: 1
+  memory: 32M
+  disk_quota: 64M
+  routes:
+  - route: ((route))
+  buildpacks:
+  - nodejs_buildpack
