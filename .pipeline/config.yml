@@ -41,81 +41,87 @@
 # #        manifest: 'manifest.yml'
 # #        credentialsId: 'myDeploymentCredentialsId'
 
-# ---
-# general:
-#   buildTool: "npm"
-#   # inferBuildTool: true
-# service:
-#   buildToolVersion: "N14"
-# stages:
-#   Release:
-#     cloudFoundryDeploy: true
-#     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-#     cfOrg: "d19c1445trial"
-#     cfSpace: "dev"
-#     cfCredentialsId: "cfdeploy"
-#     # cfAppName: "myapp1"
-#     cfManifest: "./manifest.yml"
-#     tmsUpload: false
-# steps:
-#   # artifactPrepareVersion:
-#   #   versioningType: "cloud_noTag"
-#   # cloudFoundryDeploy:
-#   #   mtaDeployParameters: "-f --version-rule ALL"
-
+---
 general:
   buildTool: "npm"
   # inferBuildTool: true
 service:
   buildToolVersion: "N14"
-
 stages:
-  Build:
-    mavenExecuteStaticCodeChecks: false    # true, if you want to execute static code checks to verify the syntax of your Java code
-    npmExecuteLint: true                  # true, if you want to run a lint check that verifies the syntax of your JavaScript code
-
-  Additional Unit Tests:
-    karmaExecuteTests: false               # true, if you want to execute the Karma Test Runner (default: false)
-    npmExecuteScripts: false               # true, if you want to execute test scripts that are defined in step npmExecuteScripts
-
   Acceptance:
-    cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry acceptance space. If you set this parameter to true, the cloudFoundryDeploy step is mandatory
-    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" # for example, "https://api.cf.eu10.hana.ondemand.com"
+    cloudFoundryDeploy: true                                                
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" 
     cfOrg: "d19c1445trial"
-    cfSpace: "dev"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
+    cfSpace: "dev"                           
     cfAppName: "myapp101"
-    cfCredentialsId: "cfdeploy"
-    npmExecuteEndToEndTests: true                                          # true, if you want to execute end-to-end acceptance tests (default: false)
-
-  Compliance:
-    sonarExecuteScan: false                                                 # true, if you want to integrate continuous inspection of code quality (default: false). If you set this parameter to true, the sonarExecuteScan step is mandatory
-     
+    cfCredentialsId: "cfdeploy" 
   Release:
-    cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry acceptance space. If you set this parameter to true, the cloudFoundryDeploy step is mandatory
-    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" # for example, "https://api.cf.eu10.hana.ondemand.com"
+    cloudFoundryDeploy: true
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
-    cfSpace: "dev"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
-    cfAppName: "myapp101"
+    cfSpace: "dev"
     cfCredentialsId: "cfdeploy"
-    tmsUpload: false                                                         # true, if you want to upload your artifact to SAP Cloud Transport Management. If you set this parameter to true, the tmsUpload step is mandatory
-
-# Steps configuration
+    # cfAppName: "myapp1"
+    cfManifest: "./manifest.yml"
+    tmsUpload: false
 steps:
-# Init stage step 
-  artifactPrepareVersion:
-    versioningType: 
-      "cloud_noTag"                                                         # or "cloud", if you want your pipeline to write Git tags. In this case, you need to add the gitHttpsCredentialsId parameter
-                                                                            # or "library" for maven. In this case, the version needs to be set in the pom.xml file
-# Build stage step 
-  npmExecuteLint:
-    failOnError: false                                                      # true, if you want your pipeline to fail, if the lint check reveals any errors
+  # artifactPrepareVersion:
+  #   versioningType: "cloud_noTag"
+  # cloudFoundryDeploy:
+  #   mtaDeployParameters: "-f --version-rule ALL"
 
-# Test stage step 
-  npmExecuteScripts:                                                        # only relevant, if you set the npmExecuteScripts parameter in the Additional Unit Tests stage to true
-    runScripts:
-        - "test"                                                            # list of script names in your package.json file to be executed 
+# general:
+#   buildTool: "npm"
+#   # inferBuildTool: true
+# service:
+#   buildToolVersion: "N14"
 
-# Release stage steps 
-  cloudFoundryDeploy:                                                            # only relevant, if you set the cloudFoundryDeploy parameter in the Release stage to true
-    mtaDeployParameters: "-f --version-rule ALL"
+# stages:
+#   Build:
+#     mavenExecuteStaticCodeChecks: false    # true, if you want to execute static code checks to verify the syntax of your Java code
+#     npmExecuteLint: true                  # true, if you want to run a lint check that verifies the syntax of your JavaScript code
+
+#   Additional Unit Tests:
+#     karmaExecuteTests: false               # true, if you want to execute the Karma Test Runner (default: false)
+#     npmExecuteScripts: false               # true, if you want to execute test scripts that are defined in step npmExecuteScripts
+
+#   Acceptance:
+#     cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry acceptance space. If you set this parameter to true, the cloudFoundryDeploy step is mandatory
+#     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" # for example, "https://api.cf.eu10.hana.ondemand.com"
+#     cfOrg: "d19c1445trial"
+#     cfSpace: "dev"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
+#     cfAppName: "myapp101"
+#     cfCredentialsId: "cfdeploy"                                       # true, if you want to execute end-to-end acceptance tests (default: false)
+
+#   Compliance:
+#     sonarExecuteScan: false                                                 # true, if you want to integrate continuous inspection of code quality (default: false). If you set this parameter to true, the sonarExecuteScan step is mandatory
+     
+#   Release:
+#     cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry acceptance space. If you set this parameter to true, the cloudFoundryDeploy step is mandatory
+#     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" # for example, "https://api.cf.eu10.hana.ondemand.com"
+#     cfOrg: "d19c1445trial"
+#     cfSpace: "dev"                           # the Cloud Foundry space, in which you want to execute uiVeri5 tests
+#     cfAppName: "myapp101"
+#     cfCredentialsId: "cfdeploy"
+#     tmsUpload: false                                                         # true, if you want to upload your artifact to SAP Cloud Transport Management. If you set this parameter to true, the tmsUpload step is mandatory
+
+# # Steps configuration
+# steps:
+# # Init stage step 
+#   artifactPrepareVersion:
+#     versioningType: 
+#       "cloud_noTag"                                                         # or "cloud", if you want your pipeline to write Git tags. In this case, you need to add the gitHttpsCredentialsId parameter
+#                                                                             # or "library" for maven. In this case, the version needs to be set in the pom.xml file
+# # Build stage step 
+#   npmExecuteLint:
+#     failOnError: false                                                      # true, if you want your pipeline to fail, if the lint check reveals any errors
+
+# # Test stage step 
+#   npmExecuteScripts:                                                        # only relevant, if you set the npmExecuteScripts parameter in the Additional Unit Tests stage to true
+#     runScripts:
+#         - "test"                                                            # list of script names in your package.json file to be executed 
+
+# # Release stage steps 
+#   cloudFoundryDeploy:                                                            # only relevant, if you set the cloudFoundryDeploy parameter in the Release stage to true
+#     mtaDeployParameters: "-f --version-rule ALL"
     
