@@ -1,4 +1,3 @@
 applications:
-- name: myapp
+- name: myapp1
   memory: 128M
-  buildpack: nodejs_buildpack
