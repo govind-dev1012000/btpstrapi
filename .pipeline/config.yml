@@ -11,29 +11,29 @@
 
 
 # ### General project setup
-# general:
-#   inferBuildTool: true
----
 general:
-  # buildTool: "npm"
-service:
-  # buildToolVersion: "N16"
+  inferBuildTool: true
+# ---
+# general:
+#   # buildTool: "npm"
+# service:
+#   # buildToolVersion: "N16"
 # stages:
-  # Build:
-  #   mavenExecuteStaticCodeChecks: false
-  #   npmExecuteLint: false
-  # Additional Unit Tests:
-  #   npmExecuteScripts: false
-  #   karmaExecuteTests: false
-  # Acceptance:
-  #   cloudFoundryDeploy: false
-  #   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-  #   cfOrg: "d19c1445trial"
-  #   cfSpace: "dev1"
-  #   cfCredentialsId: "auth"
-  #   npmExecuteEndToEndTests: true
-  # Compliance:
-  #   sonarExecuteScan: false
+#   Build:
+#     mavenExecuteStaticCodeChecks: false
+#     npmExecuteLint: false
+#   Additional Unit Tests:
+#     npmExecuteScripts: false
+#     karmaExecuteTests: false
+#   # Acceptance:
+#   #   cloudFoundryDeploy: false
+#   #   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+#   #   cfOrg: "d19c1445trial"
+#   #   cfSpace: "dev1"
+#   #   cfCredentialsId: "auth"
+#   #   npmExecuteEndToEndTests: true
+#   Compliance:
+#     sonarExecuteScan: false
 #   Release:
 #     cloudFoundryDeploy: true
 #     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
