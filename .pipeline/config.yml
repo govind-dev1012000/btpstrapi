@@ -15,9 +15,9 @@
 #   inferBuildTool: true
 ---
 general:
-  buildTool: "mta"
+  buildTool: "npm"
 service:
-  buildToolVersion: "MBTJ11N14"
+  buildToolVersion: "N16"
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
@@ -39,6 +39,7 @@ stages:
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
     cfSpace: "dev"
+    cfAppName: "strapi"
     cfCredentialsId: "auth"
     tmsUpload: false
 steps:

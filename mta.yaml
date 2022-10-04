@@ -17,9 +17,9 @@ modules:
     parameters:
       memory: 512M
       disk-quota: 1024M
-    build-parameters:
-      builder: custom
-      commands:
-      - npm install
-      - npm run build
-      supported-platforms: [CF]
+    # build-parameters:
+    #   builder: custom
+    #   commands:
+    #   - npm install
+    #   - npm run build
+    #   supported-platforms: [CF]
