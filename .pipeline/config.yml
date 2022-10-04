@@ -15,16 +15,16 @@
 #   inferBuildTool: true
 ---
 general:
-  buildTool: "npm"
+  # buildTool: "npm"
 service:
-  buildToolVersion: "N16"
+  # buildToolVersion: "N16"
 stages:
-  Build:
-    mavenExecuteStaticCodeChecks: false
-    npmExecuteLint: false
-  Additional Unit Tests:
-    npmExecuteScripts: false
-    karmaExecuteTests: false
+  # Build:
+  #   mavenExecuteStaticCodeChecks: false
+  #   npmExecuteLint: false
+  # Additional Unit Tests:
+  #   npmExecuteScripts: false
+  #   karmaExecuteTests: false
   # Acceptance:
   #   cloudFoundryDeploy: false
   #   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
@@ -32,14 +32,15 @@ stages:
   #   cfSpace: "dev1"
   #   cfCredentialsId: "auth"
   #   npmExecuteEndToEndTests: true
-  Compliance:
-    sonarExecuteScan: false
+  # Compliance:
+  #   sonarExecuteScan: false
   Release:
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
     cfSpace: "dev"
-    cfAppName: "strapi"
+    # cfAppName: "strapi"
+    cfManifest: "./manifest.yml"
     cfCredentialsId: "auth"
     tmsUpload: false
 steps:

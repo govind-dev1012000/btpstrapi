@@ -1,0 +1,4 @@
+applications:
+- name: kupex_strapi
+  memory: 512M
+  buildpack: nodejs_buildpack
