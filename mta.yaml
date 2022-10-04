@@ -2,12 +2,12 @@ ID: straipsapp1
 _schema-version: "2.1"
 version: 0.0.1
 
-build-parameters:
-  before-all:
-   - builder: custom
-     commands:
-      - npm install
-      - npm run build
+# build-parameters:
+#   before-all:
+#    - builder: custom
+#      commands:
+#       - npm install
+#       - npm run build
 
 
 modules:
@@ -17,3 +17,9 @@ modules:
     parameters:
       memory: 512M
       disk-quota: 1024M
+    build-parameters:
+      builder: custom
+      commands:
+      - npm install
+      - npm run build
+      supported-platforms: [CF]
