@@ -22,9 +22,9 @@ general:
 #   Build:
 #     mavenExecuteStaticCodeChecks: false
 #     npmExecuteLint: false
-#   Additional Unit Tests:
-#     npmExecuteScripts: false
-#     karmaExecuteTests: false
+  Additional Unit Tests:
+    npmExecuteScripts: false
+    karmaExecuteTests: false
 #   # Acceptance:
 #   #   cloudFoundryDeploy: false
 #   #   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
