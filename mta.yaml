@@ -17,4 +17,3 @@ modules:
     parameters:
       memory: 512M
       disk-quota: 1024M
-      buildpack: nodejs_buildpack
