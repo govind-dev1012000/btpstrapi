@@ -15,5 +15,5 @@ modules:
     path: .
     type: nodejs
     parameters:
-      memory: 256M
+      memory: 512M
       disk-quota: 1024M
