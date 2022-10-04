@@ -18,7 +18,7 @@ general:
   # buildTool: "npm"
 service:
   # buildToolVersion: "N16"
-stages:
+# stages:
   # Build:
   #   mavenExecuteStaticCodeChecks: false
   #   npmExecuteLint: false
@@ -34,17 +34,29 @@ stages:
   #   npmExecuteEndToEndTests: true
   # Compliance:
   #   sonarExecuteScan: false
-  Release:
-    cloudFoundryDeploy: true
+#   Release:
+#     cloudFoundryDeploy: true
+#     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+#     cfOrg: "d19c1445trial"
+#     cfSpace: "dev"
+#     # cfAppName: "strapi"
+#     cfManifest: "./manifest.yml"
+#     cfCredentialsId: "auth"
+#     tmsUpload: false
+# steps:
+#   artifactPrepareVersion:
+#     versioningType: "cloud_noTag"
+#   cloudFoundryDeploy:
+#     mtaDeployParameters: "-f --version-rule ALL"
+
+steps:
+  mtaBuild:
+    buildTarget: 'CF'
+  cloudFoundryDeploy:
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
     cfSpace: "dev"
     # cfAppName: "strapi"
     cfManifest: "./manifest.yml"
     cfCredentialsId: "auth"
-    tmsUpload: false
-steps:
-  artifactPrepareVersion:
-    versioningType: "cloud_noTag"
-  cloudFoundryDeploy:
-    mtaDeployParameters: "-f --version-rule ALL"
+
