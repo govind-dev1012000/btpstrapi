@@ -1,17 +1,4 @@
-# applications:
-# - name: myapp1
-#   memory: 128M
-#   buildpack: nodejs_buildpack
-
-# ---
-# applications:
-# - name: first-push
-#   memory: 218MB
-#   disk_quota: 218MB
-#   buildpacks:
-#   - nodejs_buildpack
-
-ID: strapiapp1
+ID: straipsapp1
 _schema-version: "2.1"
 version: 0.0.1
 
@@ -20,14 +7,13 @@ build-parameters:
    - builder: custom
      commands:
       - npm install
+      - npm run build
 
 
 modules:
-  - name: stapiapp1
+  - name: straipsapp1
     path: .
     type: nodejs
-#    build-parameters:
-#      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 1024M
