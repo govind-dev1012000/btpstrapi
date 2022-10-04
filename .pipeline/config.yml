@@ -12,13 +12,13 @@
 
 # ### General project setup
 general:
-  inferBuildTool: true
+  # inferBuildTool: true
 # ---
 # general:
 #   # buildTool: "npm"
-# service:
+service:
 #   # buildToolVersion: "N16"
-# stages:
+stages:
 #   Build:
 #     mavenExecuteStaticCodeChecks: false
 #     npmExecuteLint: false
