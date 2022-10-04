@@ -13,102 +13,34 @@
 # ### General project setup
 # general:
 #   inferBuildTool: true
-
-# ### Step-specific configuration
-# steps:
-#   mavenExecute:
-#     dockerImage: devxci/mbtci:1.0.14
-
-#   artifactPrepareVersion:
-#     versioningType: cloud_noTag
-
-# ### Stage-specific configuration
-# stages:
-#   'Confirm':
-#     manualConfirmation: false
-
-# #  Integration:
-# #    credentials:
-# #      - alias: 'mySystemAlias'
-# #        credentialId: 'mySystemCredentialsId'
-
-# #  Release:
-# #    cfTargets:
-# #      - org: 'myOrg'
-# #        space: 'mySpace'
-# #        apiEndpoint: 'https://'
-# #        appName: 'myAppName'
-# #        manifest: 'manifest.yml'
-# #        credentialsId: 'myDeploymentCredentialsId'
-
 ---
-# general:
-#   buildTool: "npm"
-#   # inferBuildTool: true
-# service:
-#   buildToolVersion: "N16"
-# stages:
-#   # Acceptance:
-#   #   cloudFoundryDeploy: true                                                
-#   #   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" 
-#   #   cfOrg: "d19c1445trial"
-#   #   cfSpace: "dev"                           
-#   #   cfAppName: "myapp101"
-#   #   cfCredentialsId: "cfdeploy" 
-#   Release:
-#     cloudFoundryDeploy: true
-#     # deployTool: "mtaDeployPlugin"
-#     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-#     cfOrg: "d19c1445trial"
-#     cfSpace: "dev"
-#     cfCredentialsId: "cfdeploy"
-#     # cfAppName: "myapp1"
-#     cfManifest: "./manifest.yml"
-#     tmsUpload: false
-# steps:
-#   artifactPrepareVersion:
-#     versioningType: "cloud_noTag"
-#   cloudFoundryDeploy:
-#     mtaDeployParameters: "-f --version-rule ALL"
-
-
 general:
-  buildTool: "mta"                         # "mta", "npm", or "maven"
-
+  buildTool: "mta"
 service:
-  buildToolVersion: "MBTJ11N14"            # depends on buildTool value
-
-# Stages configuration
+  buildToolVersion: "MBTJ11N14"
 stages:
   Build:
-    mavenExecuteStaticCodeChecks: false    # true, if you want to execute static code checks to verify the syntax of your Java code
-    npmExecuteLint: false                  # true, if you want to run a lint check that verifies the syntax of your JavaScript code
-
+    mavenExecuteStaticCodeChecks: false
+    npmExecuteLint: false
   Additional Unit Tests:
-    karmaExecuteTests: false               # true, if you want to execute the Karma Test Runner (default: false)
-    npmExecuteScripts: false               # true, if you want to execute test scripts that are defined in step npmExecuteScripts
-
+    npmExecuteScripts: false
+    karmaExecuteTests: false
   Acceptance:
-    cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry acceptance space. If you set this parameter to true, the cloudFoundryDeploy step is mandatory                                              
-    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" 
+    cloudFoundryDeploy: false
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
-    cfSpace: "dev"                           
-    cfAppName: "myapp101"
-    cfCredentialsId: "cfdeploy" 
-    npmExecuteEndToEndTests: true                                          # true, if you want to execute end-to-end acceptance tests (default: false)
-
+    cfSpace: "dev1"
+    cfCredentialsId: "auth"
+    npmExecuteEndToEndTests: true
   Compliance:
-    sonarExecuteScan: false                                                 # true, if you want to integrate continuous inspection of code quality (default: false). If you set this parameter to true, the sonarExecuteScan step is mandatory
-     
+    sonarExecuteScan: false
   Release:
-    cloudFoundryDeploy: true                                                # true, if you want to deploy to Cloud Foundry. If you set this parameter to true, the CloudFoundryDeploy step is mandatory                                           
-    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com" 
+    cloudFoundryDeploy: true
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "d19c1445trial"
-    cfSpace: "dev"                           
-    cfAppName: "myapp101"
-    cfCredentialsId: "cfdeploy" 
-    tmsUpload: false                                                         # true, if you want to upload your artifact to SAP Cloud Transport Management. If you set this parameter to true, the tmsUpload step is mandatory
-
+    cfSpace: "dev"
+    cfCredentialsId: "auth"
+    tmsUpload: false
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"

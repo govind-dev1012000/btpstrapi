@@ -1,25 +1,30 @@
 {
   "name": "btpstrapi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "start.js",
-  "engines": {
-    "node": "14.x.x"
-  },
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "start": "node start.js"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/govind-dev1012000/btpstrapi.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/govind-dev1012000/btpstrapi/issues"
-  },
-  "homepage": "https://github.com/govind-dev1012000/btpstrapi#readme",
+  "devDependencies": {},
   "dependencies": {
-    "express": "^4.18.1"
-  }
+    "@strapi/strapi": "4.4.1",
+    "@strapi/plugin-users-permissions": "4.4.1",
+    "@strapi/plugin-i18n": "4.4.1",
+    "pg": "8.6.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "505a5176-331a-4734-a3af-dd5a0ae5ab25"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }

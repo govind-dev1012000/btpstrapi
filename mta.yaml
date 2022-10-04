@@ -11,10 +11,10 @@
 #   buildpacks:
 #   - nodejs_buildpack
 
-ID: app1 
+ID: strapiapp1
 _schema-version: "2.1"
 version: 0.0.1
-   
+
 build-parameters:
   before-all:
    - builder: custom
@@ -23,7 +23,7 @@ build-parameters:
 
 
 modules:
-  - name: app1
+  - name: stapiapp1
     path: .
     type: nodejs
 #    build-parameters:
