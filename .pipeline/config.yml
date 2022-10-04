@@ -15,9 +15,9 @@
 #   inferBuildTool: true
 ---
 general:
-  buildTool: "mta"
+  buildTool: "nmp"
 service:
-  buildToolVersion: "MBTJ11N14"
+  buildToolVersion: "N16"
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
