@@ -2,12 +2,11 @@ ID: nextapp1
 _schema-version: "2.1"
 version: 0.0.1
    
-# build-parameters:
-#   before-all:
-#    - builder: custom
-#      commands:
-#       - npm install
-#       - npm run build
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm ci
 
 
 modules:
@@ -21,3 +20,7 @@ modules:
     parameters:
       memory: 1024M
       disk-quota: 1024M
+      buildpack: nodejs_buildpack
+      build-parameters:
+        builder: npm-ci
+        supported-platforms: [CF]
