@@ -1,8 +1,0 @@
----
-applications:
-  - name: nodeappfordocker
-    docker:
-      image: govidev1012000/nodeappfordocker:latest
-      username: govidev1012000
-    services:
-      - my-xsuaa
