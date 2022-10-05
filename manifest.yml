@@ -1,4 +1,8 @@
+---
 applications:
-- name: kupex_strapi
-  memory: 512M
-  buildpack: nodejs_buildpack
+  - name: nodeappfordocker
+    docker:
+      image: govidev1012000/nodeappfordocker:latest
+      username: govidev1012000
+    services:
+      - my-xsuaa
