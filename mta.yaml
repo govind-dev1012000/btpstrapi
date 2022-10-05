@@ -7,7 +7,7 @@ modules:
     type: application
     parameters:
       docker:
-        image: govidev1012000/nextfordocker
+        image: govidev1012000/nextfordocker:latest
         username: govidev1012000
         password: Password@33355
     build-parameters: 
