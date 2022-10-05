@@ -50,9 +50,9 @@ service:
   dockerConfigJsonSecretTextCredentialsId: "secret"
 steps:
   kanikoExecute:
-    dockerfilePath: "Dockerfile"
+    dockerfilePath: ""
   artifactPrepareVersion:
-    filePath: "Dockerfile"
+    filePath: ""
 stages:
   Build:
     kanikoExecute: true
