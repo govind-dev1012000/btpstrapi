@@ -1,15 +1,14 @@
 ID: nextapp1
 _schema-version: "2.1"
 version: 0.0.1
-
-
+   
 build-parameters:
   before-all:
-    builders:
-      - builder: custom
-        commands:
-        - npm install
-        - npm run build
+   - builder: custom
+     commands:
+      - npm install
+      - npm run build
+
 
 modules:
   - name: nextapp1
