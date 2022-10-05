@@ -6,7 +6,7 @@ version: 0.0.1
 build-parameters:
   before-all:
     builders:
-      - builder: npm
+      - builder: custom
         commands:
         - npm install
         - npm run build
