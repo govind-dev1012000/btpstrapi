@@ -14,10 +14,10 @@ modules:
   - name: nextapp1
     path: .
     type: nodejs
-    build-parameters:
-      builder: custom
-      commands:
-        - npm run build
+    # build-parameters:
+    #   builder: custom
+    #   commands:
+    #     - npm run build
     parameters:
       memory: 1024M
       disk-quota: 1024M
