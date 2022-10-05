@@ -15,7 +15,7 @@ stages:
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "c62be8e5trial"
     cfSpace: "dev"
-    cfCredentialsId: "auth"
+    cfCredentialsId: "cfdeploy"
     npmExecuteEndToEndTests: false
   Compliance:
     sonarExecuteScan: false
@@ -24,8 +24,8 @@ stages:
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "c62be8e5trial"
     cfSpace: "dev"
-    cfManifest: "./manifest.yml"
     cfCredentialsId: "cfdeploy"
+    cfManifest: "./manifest.yml"
     tmsUpload: false
 steps:
   artifactPrepareVersion:
