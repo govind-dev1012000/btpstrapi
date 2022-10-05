@@ -12,7 +12,7 @@ build-parameters:
 modules:
   - name: nextapp1
     path: .
-    type: nodejs
+    # type: nodejs
     # build-parameters:
     #   builder: custom
     #   commands:
@@ -23,4 +23,6 @@ modules:
       buildpack: nodejs_buildpack
       build-parameters:
         builder: npm-ci
+        commands:
+        - npm run build
         supported-platforms: [CF]
