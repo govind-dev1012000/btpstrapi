@@ -1,9 +1,9 @@
-ID: app1 
+ID: app101 
 _schema-version: "2.1"
 version: 0.0.1
    
 modules:
-  - name: app1
+  - name: app101
     type: application
     parameters:
       docker:
