@@ -3,12 +3,12 @@ _schema-version: "2.1"
 version: 0.0.1
    
 modules:
-  name: foo
-  type: application
+  - name: app1
+    type: application
     parameters:
       docker:
         image: govidev1012000/nodeappfordocker
         username: govidev1012000
         password: Password@33355
-    build-parameters: #only required for mta.yaml
+    build-parameters: 
         no-source: true
