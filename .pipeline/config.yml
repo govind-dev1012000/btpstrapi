@@ -25,7 +25,7 @@ stages:
     cfOrg: "d19c1445trial"
     cfSpace: "dev"
     cfManifest: "./manifest.yml"
-    cfCredentialsId: "auth"
+    cfCredentialsId: "cfdeploy"
     tmsUpload: false
 steps:
   artifactPrepareVersion:
