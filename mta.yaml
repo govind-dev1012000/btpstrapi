@@ -6,7 +6,7 @@ build-parameters:
   before-all:
    - builder: custom
      commands:
-      - npm ci
+      - npm ci --only=production
 
 
 modules:
@@ -20,9 +20,11 @@ modules:
     parameters:
       memory: 1024M
       disk-quota: 1024M
-      buildpack: nodejs_buildpack
-      build-parameters:
-        builder: npm-ci
-        commands:
-        - npm run build
+      parameters:
+      - tasks:
+          - name: task-1
+            command: npm start
+      # build-parameters:
+      #   commands:
+      #   - npm start
         supported-platforms: [CF]
