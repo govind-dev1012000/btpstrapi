@@ -2,18 +2,22 @@ ID: nextapp1
 _schema-version: "2.1"
 version: 0.0.1
    
-build-parameters:
-  before-all:
-   - builder: custom
-     commands:
-      - npm install
-      - npm run build
+# build-parameters:
+#   before-all:
+#    - builder: custom
+#      commands:
+#       - npm install
+#       - npm run build
 
 
 modules:
   - name: nextapp1
     path: .
     type: nodejs
+    build-parameters:
+      builder: custom
+      commands:
+        - npm run build
     parameters:
-      memory: 256M
+      memory: 1024M
       disk-quota: 1024M
