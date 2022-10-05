@@ -13,8 +13,8 @@ stages:
   Acceptance:
     cloudFoundryDeploy: false
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-    cfOrg: "d19c1445trial"
-    cfSpace: "dev1"
+    cfOrg: "c62be8e5trial"
+    cfSpace: "dev"
     cfCredentialsId: "auth"
     npmExecuteEndToEndTests: false
   Compliance:
@@ -22,7 +22,7 @@ stages:
   Release:
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-    cfOrg: "d19c1445trial"
+    cfOrg: "c62be8e5trial"
     cfSpace: "dev"
     cfManifest: "./manifest.yml"
     cfCredentialsId: "cfdeploy"
