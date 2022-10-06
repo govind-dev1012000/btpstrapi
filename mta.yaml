@@ -1,0 +1,19 @@
+ID: strapiapp101
+_schema-version: "2.1"
+version: 0.0.1
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install
+      - npm run build
+
+
+modules:
+  - name: strapi101
+    path: .
+    type: nodejs
+    parameters:
+      memory: 1024M
+      disk-quota: 1024M

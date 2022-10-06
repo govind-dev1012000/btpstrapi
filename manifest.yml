@@ -1,5 +1,0 @@
-applications:
-- name: strapibtp10101010
-  command: npm start
-  memory: 512M
-  buildpack: nodejs_buildpack
