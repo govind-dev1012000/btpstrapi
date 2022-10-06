@@ -15,8 +15,11 @@ modules:
     path: .
     type: nodejs
     parameters:
+      - tasks:
+          env: 
+            APP_KEYS_ALL: Q8luWVq6jkWA9uo9KamEsg==,AOqvcziJQ/9I5N3eETBvpw==,B/V+mt+uL8wALyR4S0zhcA==,d7/vePg+YQ/76pmGIHJUPQ==
       memory: 1024M
       disk-quota: 1024M
-    requires:
-      properties:
-        APP_KEYS1: Q8luWVq6jkWA9uo9KamEsg==,AOqvcziJQ/9I5N3eETBvpw==,B/V+mt+uL8wALyR4S0zhcA==,d7/vePg+YQ/76pmGIHJUPQ==
+    # requires:
+    #   properties:
+    #     APP_KEYS1: Q8luWVq6jkWA9uo9KamEsg==,AOqvcziJQ/9I5N3eETBvpw==,B/V+mt+uL8wALyR4S0zhcA==,d7/vePg+YQ/76pmGIHJUPQ==
