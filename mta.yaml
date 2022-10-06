@@ -17,6 +17,7 @@ modules:
     parameters:
       memory: 1024M
       disk-quota: 1024M
+      #This is not required in MTA CI/CD
       # env:
       #   APP_KEYS: cY3XdOS+W9UFZAtAK772gg==,TN9ceg+QZtpjlec2/TiHPQ==,czZKW38XoNAZmBBaEocmWw==,Hl9WMbhIvdEbfKEaGcb2zQ==
       #   ADMIN_JWT_SECRET: gqK9qoARNrBLXolrNIltsQ==
